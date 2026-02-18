@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Inovador</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; margin: 40px; }
-        h1 { color: #2c3e50; }
-        p { font-size: 1.1em; line-height: 1.6; }
-        .highlight { color: #e67e22; font-weight: bold; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #777; }
-    </style>
-</head>
-<body>
-    <h1>Bem-vindo ao <span class="highlight">Projeto Inovador</span></h1>
-    <p>Este projeto é o melhor porque oferece <span class="highlight">soluções inovadoras</span> e <span class="highlight">eficientes</span> para seus desafios.</p>
-    <p>Contribua e faça parte dessa jornada de sucesso, colaborando para um futuro melhor!</p>
-    <footer>
-        <p>© 2024 Projeto Inovador. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+# Projeto Exemplo
+
+Este projeto é uma aplicação de exemplo que demonstra as melhores práticas de desenvolvimento de software.
+
+## Funcionalidades
+- Funcionalidade 1: Descrição breve da funcionalidade 1.
+- Funcionalidade 2: Descrição breve da funcionalidade 2.
+- Funcionalidade 3: Descrição breve da funcionalidade 3.
+
+## Como usar
+1. Clone este repositório.
+2. Instale as dependências necessárias.
+3. Execute o projeto com o comando apropriado.
+
+## Contribuição
+Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull request.
+
+## Licença
+Este projeto está licenciado sob a licença MIT.
