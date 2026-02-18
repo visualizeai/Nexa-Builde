@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(124,58,237,0.22), transparent 60%),
+              radial-gradient(900px 700px at 80% 30%, rgba(34,211,238,0.18), transparent 55%),
+              radial-gradient(900px 700px at 50% 90%, rgba(236,72,153,0.12), transparent 55%),
+              #070A12;
+  overflow-x: hidden;
+}
+
+/* Animated gradient layer */
+.bg-animated {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(from 180deg at 50% 50%,
+    rgba(124,58,237,0.35),
+    rgba(34,211,238,0.25),
+    rgba(236,72,153,0.22),
+    rgba(124,58,237,0.35)
+  );
+  filter: blur(60px);
+  opacity: 0.55;
+  animation: spinSlow 18s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Subtle grid */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 20%, black 35%, transparent 70%);
+  opacity: 0.25;
+}
+
+/* Glass */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button shine */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 60%;
+  height: 340%;
+  transform: rotate(25deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: transform 700ms ease, left 700ms ease;
+}
+
+.btn-shine:hover::after {
+  left: 120%;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg-animated { animation: none; }
+  .reveal { transition: none; }
+}
