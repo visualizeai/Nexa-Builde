@@ -1,10 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, 0.06);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
 }
+
+* { box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -12,90 +15,48 @@ html, body {
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(1200px 800px at 20% 10%, rgba(124,58,237,0.22), transparent 60%),
-              radial-gradient(900px 700px at 80% 30%, rgba(34,211,238,0.18), transparent 55%),
-              radial-gradient(900px 700px at 50% 90%, rgba(236,72,153,0.12), transparent 55%),
-              #070A12;
-  overflow-x: hidden;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 10%, #1a2a6c 0%, transparent 55%),
+    radial-gradient(1200px 800px at 80% 20%, #b21f1f 0%, transparent 55%),
+    radial-gradient(1200px 800px at 50% 80%, #0f9b0f 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
 }
 
-/* Animated gradient layer */
-.bg-animated {
-  position: absolute;
-  inset: -40%;
-  background: conic-gradient(from 180deg at 50% 50%,
-    rgba(124,58,237,0.35),
-    rgba(34,211,238,0.25),
-    rgba(236,72,153,0.22),
-    rgba(124,58,237,0.35)
-  );
-  filter: blur(60px);
-  opacity: 0.55;
-  animation: spinSlow 18s linear infinite;
-  transform-origin: center;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px;
 }
 
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header {
+  margin-bottom: 24px;
 }
 
-/* Subtle grid */
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at 50% 20%, black 35%, transparent 70%);
-  opacity: 0.25;
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
 }
 
-/* Glass */
-.glass {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 18px 18px;
   backdrop-filter: blur(10px);
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 700ms ease, transform 700ms ease;
+h1, h2 {
+  margin: 0;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+h2 {
+  margin-bottom: 10px;
 }
 
-/* Button shine */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  top: -120%;
-  left: -40%;
-  width: 60%;
-  height: 340%;
-  transform: rotate(25deg);
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
-  transition: transform 700ms ease, left 700ms ease;
-}
-
-.btn-shine:hover::after {
-  left: 120%;
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .bg-animated { animation: none; }
-  .reveal { transition: none; }
+ol {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
 }
