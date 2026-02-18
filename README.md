@@ -1,17 +1,15 @@
-# Nexa Builde — Landing com efeitos
+# Nexa-Builde — Olá Mundo
 
-Projeto front-end (Vite + React + Tailwind) com uma landing page moderna e **efeitos visuais**:
-- Gradiente animado + glow
-- Partículas leves no fundo
-- Cards com **tilt** (parallax no mouse)
-- **Scroll reveal** (anima ao entrar na tela)
+Site simples exibindo **"Olá mundo"**.
 
 ## Rodar localmente
 
 ```bash
-npm i
+npm install
 npm run dev
 ```
+
+Abra o endereço que o Vite mostrar no terminal (geralmente http://localhost:5173).
 
 ## Build
 
@@ -19,8 +17,3 @@ npm run dev
 npm run build
 npm run preview
 ```
-
-## Onde editar
-- `src/App.jsx` (conteúdo das seções)
-- `src/styles.css` (efeitos/animações)
-- `tailwind.config.js` (tema)
